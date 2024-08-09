@@ -15,6 +15,8 @@ namespace EmployeeWage
             // Variables
             int empHours = 0, totalEmphrs = 0, totalWorkingDays = 0;
 
+
+            //computation
             while (totalEmphrs < MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
