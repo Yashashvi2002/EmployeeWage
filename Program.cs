@@ -6,7 +6,7 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Employee Wage");
+            Console.WriteLine("Welcome to Employee Wage System!");
         }
     }
 }
