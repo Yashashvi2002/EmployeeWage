@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace EmployeeWage
 {
-    public class EmpWageBuilderArray
+    public class EmpWageBuilder: IComputeEmpWage
     {
         // Constants
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
         private LinkedList<CompanyEmpWage> companyEmpWageList;
-        public EmpWageBuilderArray()
+        public EmpWageBuilder()
         {
             this.companyEmpWageList = new LinkedList<CompanyEmpWage> ();
         }
@@ -60,6 +60,12 @@ namespace EmployeeWage
         }
     }
 
+    interface IComputeEmpWage
+    {
+        void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+        void computeEmpWage();
+    }
+
     public class CompanyEmpWage
     {
         public string company;
@@ -89,7 +95,7 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
             empWageBuilder.addCompanyEmpWage("Dmart", 20, 2, 10);
             empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 20);
             empWageBuilder.computeEmpWage();
